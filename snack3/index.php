@@ -43,11 +43,16 @@ $posts = [
   ],
 ];
 
-var_dump(array_keys($posts));
-for ($i=0; $i < count($posts); $i++) { 
+// var_dump(array_keys($posts));
+foreach ($posts as $post) {
   # code...
-  var_dump($posts[$i]);
+  var_dump($post);
+  foreach ($post as $value) {
+    # code...
+    var_dump($value);
+  }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +63,5 @@ for ($i=0; $i < count($posts); $i++) {
   <title>Document</title>
 </head>
 <body>
-  
 </body>
 </html>
