@@ -43,14 +43,18 @@ $posts = [
   ],
 ];
 
-// var_dump(array_keys($posts));
-foreach ($posts as $post) {
+foreach ($posts as $key => $post) {
   # code...
-  var_dump($post);
+  echo '<li>' . $key . '</li>';
   foreach ($post as $value) {
-    # code...
     var_dump($value);
+    # code...
   }
+  // echo $key;
+  // if ($key == 'title') {
+  //   # code...
+  //   echo $value;
+  // }
 }
 
 ?>
