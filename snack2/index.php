@@ -5,18 +5,49 @@
 // che mail contenga un punto e una chiocciola 
 // e che age sia un numero. 
 // Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
-$name = $_GET['name'];
-$age = $_GET['age'];
-$email = $_GET['mail'];
-var_dump($name);
-var_dump($email);
-var_dump($age);
-$nameLeng= strlen($name);
-var_dump($nameLeng);
-if (strpos($email, '@') !== false && strpos($email, '.') !== false) {
+// $age = $_GET['age'];
+// $email = $_GET['mail'];
+$checkName = false;
+$checkMail = false;
+$checkAge = false;
+
+// nome
+if (empty($_GET['name']) === false) {
   # code...
-  var_dump($email);
+  $name = $_GET['name'];
+  if (mb_strlen($name) >= 3) {
+    $checkName = true;
+    # code...
+  }
+} 
+
+// email
+if (empty($_GET['mail']) === false) {
+  # code...
+  $mail = $_GET['mail'];
+  if (strpos($mail, '@') !== false && strpos($mail, '.') !== false) {
+    $checkMail = true;
+    # code...
+  }
+} 
+
+// age
+if (empty($_GET['age']) === false) {
+  # code...
+  $age = $_GET['age'];
+  if (is_numeric($age) == true) {
+    $checkAge = true;
+    # code...
+  }
+} 
+
+if ($checkName == true && $checkMail == true && $checkAge == true) {
+  # code...
+  $message = 'Accesso riuscito';
+} else {
+  $message = 'Accesso negato';
 }
+
 
 ?>
 
@@ -29,6 +60,6 @@ if (strpos($email, '@') !== false && strpos($email, '.') !== false) {
   <title>Document</title>
 </head>
 <body>
-
+  <h1> <?php echo $message ?> </h1>
 </body>
 </html>
