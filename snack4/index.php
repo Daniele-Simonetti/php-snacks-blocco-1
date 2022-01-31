@@ -19,7 +19,7 @@ function getNums ($min, $max, $nItems) {
 
 }
 
-var_dump(getNums(0, 100, 15));
+echo implode(" - ",getNums(0, 100, 15));
 
 
 ?>
