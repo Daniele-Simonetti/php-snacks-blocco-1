@@ -45,16 +45,14 @@ $posts = [
 
 foreach ($posts as $key => $post) {
   # code...
-  echo '<li>' . $key . '</li>';
+  echo '<h1>' . $key . '</h1>';
   foreach ($post as $value) {
-    var_dump($value);
+    echo  '<h2>'. 'Titolo: ' . $value['title'] . '</h2>';
+    echo '<li>' . 'Autore: ' . $value['author'] . '</li>';
+    echo '<p>' . 'text: ' . $value['text'] . '</p>';
     # code...
   }
-  // echo $key;
-  // if ($key == 'title') {
-  //   # code...
-  //   echo $value;
-  // }
+
 }
 
 ?>
